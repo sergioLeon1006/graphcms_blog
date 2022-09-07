@@ -26,6 +26,7 @@ function CommentsForm({slug}:any) {
 
     if (!comment || !name || !email) {
       setError(true);
+      return false;
     }
 
     const commentObject = {name,email,comment, slug};
@@ -57,21 +58,21 @@ function CommentsForm({slug}:any) {
           name="comment"
         />
       </div>
-      <div className="grid grid-cols-1 gab-4 mb-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <input ref={nameElement} 
           type="text" 
-          className="py-4 px-4  outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
+          className="py-4 px-4 mx-auto outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
           placeholder='Full name'
           name="name"
         />
         <input ref={emailElement} 
           type="email" 
-          className="py-4 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
+          className="py-4 px-4 mx-auto outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
           placeholder='email'
-          name="name"
+          name="email"
         />
       </div>
-      <div className="grid grid-cols-1 gab-4 mb-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <div>
           <input ref={storeDataElement} type="checkbox" id="storeData" name="storeData" value="true"/>
           <label className="text-gray-500 cursor-pointer mx-4" htmlFor="storeData">Save e-mail and name for the next time</label>

@@ -10,7 +10,7 @@ function Comments({slug}:any) {
     getComments(slug).then((result) => {
       setComments(result);
     })
-  }, [])
+  }, [slug])
   
   return (
     <>

@@ -146,6 +146,41 @@ export const getComments = async (slug:string) => {
       }
     }
   `;
-  const result:any = await request(graphqlAPI, query,{ slug});
+  const result:any = await request(graphqlAPI, query,{slug});
   return result.comments;
+}
+
+export const getPostsCategory = async (slug:string) => {
+  const query = gql`
+    query MyQuery($slug : String!) {
+      postsConnection(where:  {categories_some: {slug: $slug}}) {
+        edges {
+          cursor
+          node {
+            author {
+              bio
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            slug
+            title
+            excerpt
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;  
+const result:any = await request(graphqlAPI, query,{slug});
+return result.postsConnection.edges;
 }

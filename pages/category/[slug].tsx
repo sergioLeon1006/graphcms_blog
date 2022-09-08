@@ -1,13 +1,20 @@
 import React from 'react'
 import {getPostsCategory, getPost} from '../../services';
-import {PostCart,Categories,PostWidget} from '../../components'
+import {PostCart,Categories,PostWidget,Loader} from '../../components'
+import { useRouter } from 'next/router';
 
 export const Category = ({post}:any) => {
+  const router = useRouter();
+  
+  if (router.isFallback) {
+    return <Loader></Loader>
+  }
+
   return (
     <div className="container mx-auto px-10 mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="col-span-1 lg:col-span-8">
-            {(post && post.map((_p:any,index:number)=>(<PostCart post={_p} key={index}></PostCart>)))}
+            {post.map((_p:any,index:number)=>(<PostCart post={_p} key={index}></PostCart>))}
             </div>
             <div className="lg:col-span-4 col-span-1">
                 <div className="lg:sticky relative top-8">

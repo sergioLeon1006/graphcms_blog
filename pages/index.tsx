@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { PostCart,Categories,PostWidget } from '../components'
 import { getPost } from '../services';
+import { FeaturedPosts } from '../sections';
 
 export default function Home({post}:any){
   return (
@@ -9,6 +10,8 @@ export default function Home({post}:any){
         <title>Future software</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <FeaturedPosts></FeaturedPosts>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">

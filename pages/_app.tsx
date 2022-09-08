@@ -8,6 +8,59 @@ function MyApp({ Component, pageProps }: AppProps) {
   return(
     <Layout>
       <Component {...pageProps} />
+  
+    <div className="stars">
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+    </div>
     </Layout>
   ) 
 }
